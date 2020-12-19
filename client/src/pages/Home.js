@@ -15,8 +15,8 @@ class Home extends Component {
     message: "Search For A Book To Begin!"
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
+  handleInputChange = e => {
+    const { name, value } = e.target;
     this.setState({
       [name]: value
     });
@@ -35,11 +35,13 @@ class Home extends Component {
           message: "No New Books Found, Try a Different Query"
         })
       );
+      console.log('getBooks hit');
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  handleFormSubmit = e => {
+    e.preventDefault();
     this.getBooks();
+    console.log('search button hit');
   };
 
   handleBookSave = id => {
@@ -75,6 +77,12 @@ class Home extends Component {
                 handleFormSubmit={this.handleFormSubmit}
                 q={this.state.q}
               />
+              <button
+                          onClick={this.handleFormSubmit}
+                          className="btn btn-primary ml-2"
+                        >
+                          Search
+                        </button>
             </Card>
           </Col>
         </Row>
