@@ -6,6 +6,7 @@ function Footer() {
       <hr />
       <p className="pull-right">
         <i className="fab fa-github" /> Built by Andrew Segre
+        {/* if time add link to portfolio page */}
       </p>
     </footer>
   );
